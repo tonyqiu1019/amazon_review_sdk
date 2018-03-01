@@ -1,2 +1,7 @@
 # macos finder file
 .DS_Store
+
+# django related
+*.sqlite3
+migrations/
+__pycache__/
