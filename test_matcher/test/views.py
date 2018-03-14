@@ -1,7 +1,13 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 
+def _fail(stat, error_msg):
+    return JsonResponse({ 'stat': stat, 'error': error_msg })
+
 def match(request):
+    if request.method != 'POST':
+        return _fail(400, 'invalid request type')
+
     query = request.POST.dict()
     properties = query["properties"]
     reviews = query["reviews"]
