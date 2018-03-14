@@ -1,18 +1,25 @@
 from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk import tokenize
+
+import json
+
+
 def _fail(stat, error_msg):
     return JsonResponse({ 'stat': stat, 'error': error_msg })
+
 
 def match(request):
     if request.method != 'POST':
         return _fail(400, 'invalid request type')
 
-    query = request.POST.dict()
-    properties = query["properties"]
-    reviews = query["reviews"]
-    relationships = keyword_match(properties, reviews)
-    return JsonResponse(relationships)
+    data_dict = json.loads(request.body.decode('utf-8'))
+    properties = data_dict["properties"]
+    reviews = data_dict["reviews"]
+    rels = keyword_match(properties, reviews)
+    return JsonResponse({"relationships": rels}, safe=False)
 
 
 def keyword_match(properties, reviews):
