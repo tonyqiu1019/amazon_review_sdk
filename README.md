@@ -19,7 +19,7 @@ Our Chrome extension backend server will call your API using a POST request, wit
     - `page`: The page number of the review on Amazon review display webpage.
 
 For example, below is a possible JSON format:
-```
+```json
 {
   "properties": [
     {
@@ -63,7 +63,7 @@ Your API should also return JSON data, in the following format:
     - `sentiment`: A floating point number from -1 to 1 indicating whether this is a positive(1) or negative(-1) review.
 
 For example, below is a valid return JSON format:
-```
+```json
 {
   "relationships": [
     {
@@ -91,12 +91,12 @@ If you are not familiar with REST API development, we provide sample implementat
 #### If you are using Python
 
 The Python implementation of our API is based on the `Django` framework. Please ensure you have Python version 3.5+; install `Django` with the following command:
-```
+```shell
 $ pip install django
 ```
 
 Please provide implementation for the following function stamp, located in `views.py`:
-```
+```python
 def keyword_match(properties, reviews):
     # do your stuff
     return relationships
@@ -107,7 +107,7 @@ where:
 - The return variable, `relationships`, is a list of dictionaries of relationships, in the format specified above.
 
 Run the server by the following command:
-```
+```shell
 $ python manage.py migrate && python manage.py runserver
 ```
 
