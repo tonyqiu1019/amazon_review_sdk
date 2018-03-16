@@ -133,7 +133,7 @@ $ mvn package
 
 Finally, run the API server on port 4567 of your localhost using the following command:
 ```shell
-$  mvn exec:java -Dexec.mainClass="MatcherAPI.Main"
+$ mvn exec:java -Dexec.mainClass="MatcherAPI.Main"
 ```
 
 ## Collaborators
