@@ -128,7 +128,7 @@ Above command will install everything in [`examples/java/lib/`](examples/java/li
 $ ./gen_pom.py
 ```
 
-Now you can use Maven to build the API server Java executable:
+You should see a new file called `pom.xml` in your working directory. Now you can use Maven to build the API server Java executable:
 ```shell
 $ mvn package
 ```
