@@ -5,3 +5,7 @@
 *.sqlite3
 migrations/
 __pycache__/
+
+# java related
+examples/java/data/
+examples/java/target/
