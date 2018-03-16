@@ -115,7 +115,9 @@ If everything is setup correctly, your API server should be running on port 8000
 
 #### If you are using Java
 
-We use [Maven](https://maven.apache.org/) as a package manager for our java code. Furthermove, the file [`examples/java/lib/IR_Base.jar`](examples/java/lib/IR_Base.jar) is a direct java archive of the [IR_Base](https://github.com/Linda-sunshine/IR_Base) repository. Please ensure you are using Java 1.8. First, run the following command to install required external libraries:
+Please ensure you are using Java 1.8. We use [Maven](https://maven.apache.org/) as a package manager for our java code. Please follow the instructions on their website to install `mvn`. Furthermove, the file [`examples/java/lib/IR_Base.jar`](examples/java/lib/IR_Base.jar) is a direct java archive of the [IR_Base](https://github.com/Linda-sunshine/IR_Base) repository.
+
+First, run the following command to install required external libraries:
 ```shell
 $ cd examples/java
 $ ./install.sh
