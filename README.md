@@ -86,7 +86,7 @@ Note that the provided JSON data may contain extra information than what you nee
 
 ## Sample Implementations
 
-If you are not familiar with REST API development, we provide sample implementations of the API in both Python (located in [`test_matcher/`](test_matcher/)) and Java. Below are instructions for how to setup your server, and what you need to implement. Please contact us if you have any problems.
+If you are not familiar with REST API development, we provide sample implementations of the API in both Python (located in [`examples/python/`](examples/python/)) and Java (located in [`examples/java/`](examples/java/). Below are instructions for how to setup your server, and what you need to implement. Please contact us if you have any problems.
 
 #### If you are using Python
 
@@ -111,11 +111,30 @@ Run the server by the following command:
 $ python manage.py migrate && python manage.py runserver
 ```
 
-If everything is setup correctly, your API server should be running on port 8000 of your server address.
+If everything is setup correctly, your API server should be running on port 8000 of your localhost.
 
 #### If you are using Java
 
-TODO: complete this part
+We use [Maven](https://maven.apache.org/) as a package manager for our java code. Furthermove, the file [`examples/java/lib/IR_Base.jar`](examples/java/lib/IR_Base.jar) is a direct java archive of the [IR_Base](https://github.com/Linda-sunshine/IR_Base) repository. Please ensure you are using Java 1.8. First, run the following command to install required external libraries:
+```shell
+$ cd examples/java
+$ ./install.sh
+```
+
+Above command will install everything in [`examples/java/lib/`](examples/java/lib/) as dependencies in Maven. Now run this Python script to gerenate `pom.xml`, required by Maven:
+```shell
+$ ./gen_pom.py
+```
+
+Now you can use Maven to build the API server Java executable:
+```shell
+$ mvn package
+```
+
+Finally, run the API server on port 4567 of your localhost using the following command:
+```shell
+$  mvn exec:java -Dexec.mainClass="MatcherAPI.Main"
+```
 
 ## Collaborators
 
