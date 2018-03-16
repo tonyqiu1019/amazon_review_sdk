@@ -143,3 +143,7 @@ $ mvn exec:java -Dexec.mainClass="MatcherAPI.Main"
 - Tong Qiu ([tq7bw@virginia.edu](mailto:tq7bw@virginia.edu))
 - Charlie Wu ([jw7jb@virginia.edu](mailto:jw7jb@virginia.edu))
 - Jerry Sun ([ys7va@virginia.edu](mailto:ys7va@virginia.edu))
+
+## Acknowledgements
+
+Special thanks to Professor Hongning Wang at Unversity of Virginia for guidance on this project.
