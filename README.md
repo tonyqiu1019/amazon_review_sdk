@@ -108,6 +108,7 @@ where:
 
 Run the server by the following command:
 ```shell
+$ cd examples/python
 $ python manage.py migrate && python manage.py runserver
 ```
 
