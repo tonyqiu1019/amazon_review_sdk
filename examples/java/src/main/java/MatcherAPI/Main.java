@@ -66,24 +66,7 @@ public class Main
 				e.printStackTrace();
 				res.type("");
 				throw e;
-//				String err =  gson.toJson(e.getLocalizedMessage());
-//				return String.format("{\"error\":%s}", err);
 			}
 		});
-		
-		
-//		post("test", (req, res) -> {
-//		    res.type("application/json");
-//		
-//		    JsonParser parser = new JsonParser();
-//		    JsonElement j = parser.parse(req.body());
-//		    JsonObject jO = j.getAsJsonObject();
-//		    return jO.get("a");
-//		});
-//		
-//		get("hello", (req,res) -> {
-//		    res.type("application/json");
-//		    return "hello";
-//		}, json());
 	}
 }
