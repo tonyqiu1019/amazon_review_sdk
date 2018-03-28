@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+  <classpathentry kind="src" path="src/main/java" including="**/*.java"/>
+  <classpathentry kind="output" path="target/classes"/>
+  <classpathentry kind="var" path="M2_REPO/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"/>
+  <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+  <classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/sparkjava/spark-core/2.7.2/spark-core-2.7.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-server/9.4.8.v20171121/jetty-server-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-http/9.4.8.v20171121/jetty-http-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-util/9.4.8.v20171121/jetty-util-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-io/9.4.8.v20171121/jetty-io-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-webapp/9.4.8.v20171121/jetty-webapp-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-xml/9.4.8.v20171121/jetty-xml-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-servlet/9.4.8.v20171121/jetty-servlet-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-security/9.4.8.v20171121/jetty-security-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/websocket/websocket-server/9.4.8.v20171121/websocket-server-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/websocket/websocket-common/9.4.8.v20171121/websocket-common-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/websocket/websocket-api/9.4.8.v20171121/websocket-api-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/websocket/websocket-client/9.4.8.v20171121/websocket-client-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/jetty-client/9.4.8.v20171121/jetty-client-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/eclipse/jetty/websocket/websocket-servlet/9.4.8.v20171121/websocket-servlet-9.4.8.v20171121.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/google/code/gson/gson/2.6.2/gson-2.6.2.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase1/1.0/IRBase1-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase2/1.0/IRBase2-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase3/1.0/IRBase3-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase4/1.0/IRBase4-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase5/1.0/IRBase5-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase6/1.0/IRBase6-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase7/1.0/IRBase7-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase8/1.0/IRBase8-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase9/1.0/IRBase9-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase10/1.0/IRBase10-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase11/1.0/IRBase11-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase12/1.0/IRBase12-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase13/1.0/IRBase13-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase14/1.0/IRBase14-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase15/1.0/IRBase15-1.0.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/IRBase/IRBase16/1.0/IRBase16-1.0.jar"/>
+</classpath>

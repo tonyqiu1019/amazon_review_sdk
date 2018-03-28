@@ -8,3 +8,5 @@ __pycache__/
 
 # java related
 examples/java/target/
+examples/java/data
+examples/java/pom.xml
