@@ -35,7 +35,7 @@ For example, below is a possible JSON format:
       "topic": "Processor",
       "text_content": "intel amd i3 i5 i7 frequency",
       "xpath": "//other"
-    },
+    }
   ],
   "reviews": [
     {
@@ -49,7 +49,7 @@ For example, below is a possible JSON format:
       "id": "ABCDEFG1234567",
       "prod": "ABCDE01234",
       "page": 20
-    },
+    }
   ]
 }
 ```
