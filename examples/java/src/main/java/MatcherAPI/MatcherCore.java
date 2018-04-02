@@ -1,44 +1,21 @@
 package MatcherAPI;
 
 import Analyzer.DocAnalyzer;
-import opennlp.tools.cmdline.postag.POSModelLoader;
-import opennlp.tools.postag.POSTaggerME;
-import opennlp.tools.sentdetect.SentenceDetectorME;
-import opennlp.tools.sentdetect.SentenceModel;
-import opennlp.tools.tokenize.Tokenizer;
-import opennlp.tools.tokenize.TokenizerME;
-import opennlp.tools.tokenize.TokenizerModel;
 import opennlp.tools.util.InvalidFormatException;
-import structures.TokenizeResult;
 import structures._Corpus;
 import structures._Doc;
-import structures._SparseFeature;
-import structures._Stn;
-import structures._stat;
 import topicmodels.markovmodel.HTMM;
 import topicmodels.pLSA.pLSA;
-import utils.Utils;
 
-import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
-import java.text.Normalizer;
-import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Set;
-
-import org.tartarus.snowball.SnowballStemmer;
-import org.tartarus.snowball.ext.englishStemmer;
+import java.io.ObjectOutputStream;
 
 public class MatcherCore {
-	public MatcherCore() throws InvalidFormatException, FileNotFoundException, IOException {
+	public MatcherCore() throws FileNotFoundException, IOException {
 		analyzer = new DocAnalyzer("./data/Model/en-token.bin", 
 				"./data/Model/en-sent.bin", 
 				"./data/Model/en-pos-maxent.bin", 5, null, 1, 5);
@@ -46,13 +23,30 @@ public class MatcherCore {
 		analyzer.LoadDirectory("./data/amazon/laptops", ".json");
 		analyzer.setFeatureValues("TF", 0);
 		
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("./data/htmm.ser"));
+		
 		try {
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("./data/htmm.ser"));
 			model = (HTMM) ois.readObject();
+			ois.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		ois.close();
+		
+		/*
+		_Corpus c = analyzer.getCorpus();
+		model = new HTMM(50, 1e-9, 1.0+1e-3, c, 15, 1.0+1e-2);
+		model.setSentiAspectPrior(false);
+		model.LoadPrior("./data/Model/laptops_bootstrapping_test.dat", 5.0);
+		model.EMonCorpus();
+		
+		try {
+			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("./data/htmm2.ser"));
+			oos.writeObject(model);
+			oos.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		*/
 		
 		if (analyzer == null || model == null) {
 			System.out.println("Error processing inference model");
@@ -65,7 +59,7 @@ public class MatcherCore {
 		analyzer.LoadJsonDoc("./data/2.json");
 		_Doc doc = analyzer.getProcessedDoc();
 		if (doc == null) return null;
-		double score = model.inference(doc);
+		model.inference(doc);
 		return doc;
 	}
 	
@@ -86,8 +80,8 @@ public class MatcherCore {
 		"",
 		""
 	};
+	public static final double threshold = 0.1;
 	
 	private DocAnalyzer analyzer;
 	private HTMM model;
-	
 }

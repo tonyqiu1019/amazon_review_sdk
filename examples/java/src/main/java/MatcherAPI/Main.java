@@ -11,15 +11,12 @@ import MatcherAPI.Model.*;
 import structures._Doc;
 import structures._Stn;
 
-import java.io.IOException;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Main
 {
-	public static void main( String[] args )
-	        throws IOException, ParseException
+	public static void main(String[] args) throws Exception
 	{
 		MatcherCore mc = new MatcherCore();
 		Gson gson = new Gson();
@@ -46,14 +43,18 @@ public class Main
 					if (doc == null) continue;
 					
 					
-					for (_Stn s : doc.getSentences()) {
-						String topicName = MatcherCore.topics[s.getTopic() % 15];
-						if (topicName.equals("") || !map.containsKey(topicName)) continue;
+					for (int i = 0; i < doc.getSenetenceSize(); i++) {
+						_Stn stn = doc.getSentence(i);
+						double entropy = doc.getEntropyForSentence(i);
+						
+						if (entropy >= MatcherCore.threshold) continue;
+						String topic = MatcherCore.topics[stn.getTopic() % 15];
+						if (topic.equals("") || !map.containsKey(topic)) continue;
 						
 						Relationship rel = md.new Relationship();
-						rel.best_sentence = s.getRawSentence();
+						rel.best_sentence = stn.getRawSentence();
 						rel.related_review_id = r.id;
-						rel.related_property_id = map.get(topicName);
+						rel.related_property_id = map.get(topic);
 						rel.sentiment = 0.0;
 						ret.add(rel);
 					}
@@ -69,4 +70,5 @@ public class Main
 			}
 		});
 	}
+	
 }
